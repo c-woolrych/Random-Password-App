@@ -95,11 +95,38 @@ function getPasswordOptions() {
   while (passwordLength < 8 || passwordLength > 128 || passwordLength % 1 !== 0) {
       alert ('Please choose between 8 and 128 characters.');
   passwordLength = (prompt ('How many characters would you like your password to be? (between 8 and 128)'));
-    console.log(passwordLength);
+  }
+
+  const characterTypes = "";
+
+  let lowerCase = confirm('Do you want to use lower case characters?');
+  if (lowerCase) {
+    characterTypes += lowerCase;
+  }
+
+  let upperCase = confirm('Do you want to use upper case characters?');
+  if (upperCase) {
+    characterTypes += upperCase;
+  }
+
+  let numeric = confirm('Do you want to use numeric characters?');
+  if (numeric) {
+    characterTypes += numeric;
+  }
+
+  let special = confirm('Do you want to use special characters?');
+  if (special) {
+    characterTypes += special;
+  }
+  
+
+  while (lowerCase === false || upperCase === false || numeric === false || special === false) {
+    alert ('At least one character type must be selected.');
+    characterTypes = (confirm);
   }
 }
-
 getPasswordOptions()
+
 // Function for getting a random element from an array
 function getRandom(arr) {
 
