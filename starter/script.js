@@ -90,15 +90,12 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  var passwordLength = "";
-
-  for (passwordLength) {
-   prompt ('How many characters would you like your password to be? (between 8 and 128)');
-  }  
-    if (passwordLength < 8 || passwordLength > 128);{
+  let passwordLength = "";
+  passwordLength = (prompt ('How many characters would you like your password to be? (between 8 and 128)'));
+  while (passwordLength < 8 || passwordLength > 128 || passwordLength % 1 !== 0) {
       alert ('Please choose between 8 and 128 characters.');
-  } if (passwordLength > 8 || passwordLength < 128) {
-    return "";
+  passwordLength = (prompt ('How many characters would you like your password to be? (between 8 and 128)'));
+    console.log(passwordLength);
   }
 }
 
