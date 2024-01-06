@@ -90,14 +90,18 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  var charNums =  prompt ('How many characters would you like your password to be? (between 8 and 128)');
-  if (charNums < 8) {
-    alert ('Please choose between 8 and 128 characters.');
-  } else if (charNums > 128) {
-    alert ('Please choose between 8 and 128 characters.');
+  var passwordLength = "";
+
+  for (passwordLength) {
+   prompt ('How many characters would you like your password to be? (between 8 and 128)');
+  }  
+    if (passwordLength < 8 || passwordLength > 128);{
+      alert ('Please choose between 8 and 128 characters.');
+  } if (passwordLength > 8 || passwordLength < 128) {
+    return "";
   }
-  
 }
+
 getPasswordOptions()
 // Function for getting a random element from an array
 function getRandom(arr) {
