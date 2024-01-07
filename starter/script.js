@@ -97,34 +97,36 @@ function getPasswordOptions() {
   passwordLength = (prompt ('How many characters would you like your password to be? (between 8 and 128)'));
   }
 
-  const characterTypes = "";
+  let characterTypes = "";
 
-  let lowerCase = confirm('Do you want to use lower case characters?');
-  if (lowerCase) {
-    characterTypes += lowerCase;
+  lowerCasedCharacters = confirm('Click "ok" if you would like to use lower case characters.');
+  if (lowerCasedCharacters) {
+    characterTypes += lowerCasedCharacters;
+  } 
+
+  upperCasedCharacters = confirm('Click "ok" if you would like to use upper case characters.');
+  if (upperCasedCharacters) {
+    characterTypes += upperCasedCharacters;
   }
 
-  let upperCase = confirm('Do you want to use upper case characters?');
-  if (upperCase) {
-    characterTypes += upperCase;
+  numericCharacters = confirm('Click "ok" if you would like to use numeric characters.');
+  if (numericCharacters) {
+    characterTypes += numericCharacters;
   }
 
-  let numeric = confirm('Do you want to use numeric characters?');
-  if (numeric) {
-    characterTypes += numeric;
+  specialCharacters = confirm('Click "ok" if you would like to use special characters.');
+  if (specialCharacters) {
+    characterTypes += specialCharacters;
   }
 
-  let special = confirm('Do you want to use special characters?');
-  if (special) {
-    characterTypes += special;
-  }
-  
-
-  while (lowerCase === false || upperCase === false || numeric === false || special === false) {
+  if (characterTypes) {
+    passwordLength += characterTypes;
+  } else if (lowerCasedCharacters === false && upperCasedCharacters === false && numericCharacters === false && specialCharacters === false) {
     alert ('At least one character type must be selected.');
-    characterTypes = (confirm);
+    getPasswordOptions();
   }
 }
+
 getPasswordOptions()
 
 // Function for getting a random element from an array
