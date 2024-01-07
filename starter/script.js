@@ -89,15 +89,15 @@ var upperCasedCharacters = [
 ];
 
 // Function to prompt user for password options
+let passwordLength = "";
+let characterTypes = "";
+
 function getPasswordOptions() {
-  let passwordLength = "";
   passwordLength = (prompt ('How many characters would you like your password to be? (between 8 and 128)'));
   while (passwordLength < 8 || passwordLength > 128 || passwordLength % 1 !== 0) {
       alert ('Please choose between 8 and 128 characters.');
   passwordLength = (prompt ('How many characters would you like your password to be? (between 8 and 128)'));
   }
-
-  let characterTypes = "";
 
   lowerCasedCharacters = confirm('Click "ok" if you would like to use lower case characters.');
   if (lowerCasedCharacters) {
@@ -131,8 +131,11 @@ getPasswordOptions()
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  return arr[Math.floor(Math.random() * arr.length)];
 }
+
+getRandom()
+console.log(getRandom(arr));
 
 // Function to generate password with user input
 function generatePassword() {
