@@ -127,28 +127,40 @@ function getPasswordOptions() {
   }
 }
 
-// getPasswordOptions()
+getPasswordOptions()
 
 // Function for getting a random element from an array
 function getRandom(...arrays) {
-  // lowerCasedCharacters[(Math.floor(Math.random() * lowerCasedCharacters.length))];
-  // upperCasedCharacters[(Math.floor(Math.random() * upperCasedCharacters.length))];
-  // numericCharacters[(Math.floor(Math.random() * numericCharacters.length))];
-  // specialCharacters[(Math.floor(Math.random() * specialCharacters.length))];
 
   const randomElements = [];
 
   for (const array of arrays) {
-    const randomElement = array[randomElements];
-    randomElements = array
+    // Generate a random index within the range of the current array's length
+    const randomIndex = Math.floor(Math.random() * array.length);
+
+    // Get the random element from the current array
+    const randomElement = array[randomIndex];
+
+    // Add the random element to the result array
+    randomElements.push(randomElement);
   }
+
+  return randomElements;
 }
 
 getRandom()
-console.log(getRandom);
+
+const randomElements = getRandom(lowerCasedCharacters, upperCasedCharacters, numericCharacters, specialCharacters);
+console.log(randomElements);
+
 // Function to generate password with user input
 function generatePassword() {
-
+  var password = "";
+  for (var i = 0; i < passwordLength.length; i++) {
+    var characterTypes = Math.floor(Math.random() * passwordLength.length + 1);
+    password += randomElements.charAt(characterTypes)
+  }
+  return password;
 }
 
 // Get references to the #generate element
