@@ -127,16 +127,25 @@ function getPasswordOptions() {
   }
 }
 
-getPasswordOptions()
+// getPasswordOptions()
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
+function getRandom(...arrays) {
+  // lowerCasedCharacters[(Math.floor(Math.random() * lowerCasedCharacters.length))];
+  // upperCasedCharacters[(Math.floor(Math.random() * upperCasedCharacters.length))];
+  // numericCharacters[(Math.floor(Math.random() * numericCharacters.length))];
+  // specialCharacters[(Math.floor(Math.random() * specialCharacters.length))];
+
+  const randomElements = [];
+
+  for (const array of arrays) {
+    const randomElement = array[randomElements];
+    randomElements = array
+  }
 }
 
 getRandom()
-console.log(getRandom(arr));
-
+console.log(getRandom);
 // Function to generate password with user input
 function generatePassword() {
 
